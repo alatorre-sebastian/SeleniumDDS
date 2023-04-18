@@ -1,4 +1,4 @@
-package SIT_Pruebas;
+package DDS_PRUEBAS;
 
 import org.openqa.selenium.By;
 import static org.junit.Assert.*;
