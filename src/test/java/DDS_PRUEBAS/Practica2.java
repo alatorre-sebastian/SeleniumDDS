@@ -18,9 +18,7 @@ public class Practica2 {
 
     @BeforeTest
     public void launchapp() {
-
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
         driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         driver.manage().window().maximize();
     }
