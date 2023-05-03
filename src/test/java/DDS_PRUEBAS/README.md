@@ -12,6 +12,7 @@ Page Object es un patrón de diseño que se ha hecho popular en la automatizaci�
 En ambos casos, esto permite que cualquier modificación necesaria debido a cambios en la interfaz de usuario se realice en un único lugar.
 
 ## Ejemplo
+Este es un ejemplo tipico donde NO se utiliza page-object-model
 ```java
 /***
  * Tests login feature
@@ -27,3 +28,38 @@ public class Login {
 }
 }
 ``` 
+### Con Page-object-model
+#### loginPage:
+```java
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+/**
+ * Page Object encapsulates the Sign-in page.
+ */
+public class SignInPage {
+  protected WebDriver driver;
+
+  // <input name="user_name" type="text" value="">
+  private By usernameBy = By.name("user_name");
+  // <input name="password" type="password" value="">
+  private By passwordBy = By.name("password");
+  // <input name="sign_in" type="submit" value="SignIn">
+  private By signinBy = By.name("sign_in");
+
+  public SignInPage(WebDriver driver){
+    this.driver = driver;
+     if (!driver.getTitle().equals("Sign In Page")) {
+      throw new IllegalStateException("This is not Sign In Page," +
+            " current page is: " + driver.getCurrentUrl());
+    }
+  }
+  public HomePage loginValidUser(String userName, String password) {
+    driver.findElement(usernameBy).sendKeys(userName);
+    driver.findElement(passwordBy).sendKeys(password);
+    driver.findElement(signinBy).click();
+    return new HomePage(driver);
+  }
+}
+``` 
+
