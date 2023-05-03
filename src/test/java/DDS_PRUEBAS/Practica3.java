@@ -5,12 +5,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
+// PRACTICA #3
+// Manejo de alertas y validaciones que se puede realizar en un sistema.
 public class Practica3 {
     WebDriver driver = new ChromeDriver();
 
@@ -22,6 +25,7 @@ public class Practica3 {
         driver.manage().window().maximize();
     }
 
+    
     @Test
     public void agregarCarrito () throws InterruptedException {
         String samsung = "//a[normalize-space()='Samsung galaxy s6']"; //xpath

@@ -29,6 +29,7 @@ public class Practica7 {
         driver.manage().window().maximize();
     }
 
+    
     @Test
     public void shouldTakeScreenShot() throws IOException, InterruptedException {
         String item = "Celular";

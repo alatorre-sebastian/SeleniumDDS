@@ -11,7 +11,8 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.locators.RelativeLocator;
 
-
+// PRACTICA 2
+// Identificar elementos mediante localizadores relativos
 
 public class Practica2 {
     WebDriver driver = new ChromeDriver();
