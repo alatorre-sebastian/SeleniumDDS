@@ -1,5 +1,5 @@
 # Practica 8
-## Se utilizao PAGE-OBJECT-MODEL para realizar esta practica.
+## Se utilizo PAGE-OBJECT-MODEL para realizar esta practica.
 
 Documentacion sobre [Page-Object-Model](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
 
@@ -10,3 +10,20 @@ Page Object es un patrón de diseño que se ha hecho popular en la automatizaci�
 - Existe una separación clara entre el código de prueba y el código específico de la página, como los localizadores y el diseño.
 - Existe un único repositorio para los servicios u operaciones que ofrece la página, en lugar de tener estos servicios dispersos a lo largo de las pruebas.
 En ambos casos, esto permite que cualquier modificación necesaria debido a cambios en la interfaz de usuario se realice en un único lugar.
+
+## Ejemplo
+```java
+/***
+ * Tests login feature
+ */
+public class Login {
+
+  public void testLogin() {
+    // fill login data on sign-in page
+    driver.findElement(By.name("user_name")).sendKeys("userName");
+    driver.findElement(By.name("password")).sendKeys("my supersecret password");
+    driver.findElement(By.name("sign-in")).click();
+  }
+}
+}
+``` 
