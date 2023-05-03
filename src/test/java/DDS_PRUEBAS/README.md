@@ -62,4 +62,17 @@ public class SignInPage {
   }
 }
 ``` 
+### Por lo que mi test quedaria de la siguiente manera
+#### login:
+```java
 
+public class TestLogin {
+
+  @Test
+  public void testLogin() {
+    SignInPage signInPage = new SignInPage(driver);
+    HomePage homePage = signInPage.loginValidUser("userName", "password");
+  }
+
+}
+```
